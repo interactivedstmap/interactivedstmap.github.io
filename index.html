@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Using an Interactive DST Map is a Simple Way to Evaluate Options Ranging From No DST to Continuous DST</title>
     <meta name="description" content="Interactive DST Map evaluates Five DST Options">
     <meta name="keywords" content="Interactive DST map, DST Western Edge effect, Abolish Daylight Savings Time, Permanent Standard Time, Daylight Savings changing clock, DST and health">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style>
-      * {
-      box-sizing: border-box; 
-      }
+
       body {
         margin: 0;
       }
@@ -21,7 +20,7 @@
       #main > nav{
         flex: 0 0 20vw;
         background: #f3f3e6;
-        font-size: 1.4vw;
+        font-size: 1.5vw;
       }
       #main > nav {
         order: -1;
@@ -37,6 +36,9 @@
       article p {
         margin: 1vw 0;
       }
+      article iframe {
+        aspect-ratio: 4/2.05;
+      }
       header, footer {
         background: #7a9163;
         color: #f3f3e6;
@@ -50,7 +52,38 @@
       footer a {
         color: #272727;
       }
+    @media only screen and (max-width: 769px) {
+        header, footer {
+            font-size: 2.2vw;
+            height: 20vw;
+        }
+        article iframe {
+            aspect-ratio: 4/2.15;
+        }
+        #main {
+            display: block;
+        }
+        nav {
+            font-size: 0.8em;
+            padding: 1vw;
+        }
+    }	
+    @media only screen and  (max-width: 1026px) and (min-width: 769px)  {
+        header, footer {
+            font-size: 2.2vw;
+            height: 20vw;
 
+        }
+        article iframe {
+            aspect-ratio: 4/2.15;
+        }
+        #main {
+            
+        }
+        nav {
+            font-size: 1.2vw;
+        }
+    }	
     </style>
   </head>
   <body>
@@ -59,14 +92,14 @@
     </header>
     <div id="main">
       <article>
-        <p><iframe src="map.html" title="Interactive DST map" width="100%" scrolling="no" style="border:none; aspect-ratio: 4/1.8;"></iframe></p>
+        <p><iframe src="map.html" title="Interactive DST map" width="100%" scrolling="no" style="border:none;"></iframe></p>
         <p style="text-align: center;font-size:1.6vw;color:#6b1b10;">
           <b>Click here for full sized map:</b>
-          <a href="https://interactivedstmap.github.io/"><b>"https://interactivedstmap.github.io/"</b></a>
+          <a href="https://interactivedstmap.github.io/map.html"><b>"https://interactivedstmap.github.io/map.html"</b></a>
         </p>
         <p style="text-align: center;font-size:1vw;color:#6b1b10;">
-            You can use code like this to embed the map within a web page:
-         &lt;iframe src="map.html" title="Interactive DST map" width="100%" height="100%" &gt;&lt;/iframe&gt;
+            You can use code like this to embed the map within a web page: </br>
+         &lt;iframe src="https://interactivedstmap.github.io/map.html" title="Interactive DST map" width="100%" height="100%" &gt;&lt;/iframe&gt;
         </p>
         <p class="mail" style="text-align: right;">
           <a href="mailto:ike@dstmap.com">I. Jeanes</a>
