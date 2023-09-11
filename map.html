@@ -7,7 +7,6 @@
         <script src="https://unpkg.com/topojson@3"></script>
 		<style>
             @import url('https://fonts.cdnfonts.com/css/tr-tempus-sans-itc');
-
             body,html {
                 height: 100%;
                 width: 100%;
@@ -19,9 +18,9 @@
                 flex-direction: column;
                 font-family: roboto;
                 font-size: 11pt;
-                width: 96%;
+                width: 80%;
                 height: 100%;
-                left: 2%;
+                left: 10%;
                 position: relative;
             }
             .middle {
@@ -34,7 +33,7 @@
             }
             .head-title {
                 font-family: 'TR Tempus Sans ITC', sans-serif;
-                font-size: 2.1vw !important;
+                font-size: 17pt !important;
                 font-weight: bold;
                 padding-bottom: 0.8em;
                 text-align: center !important;
@@ -43,7 +42,7 @@
                 display: block;
                 width: 100%;
                 text-align: justify;
-                font-size: 1.5vw;
+                font-size: 11pt;
             }
             .footer {
 
@@ -63,7 +62,7 @@
                 aspect-ratio: 3.1/2;
             }            
             .left-side {
-                font-size: 1.4vw;
+                font-size: 10pt;
             }
             .left-side p {
                 margin: 0;
@@ -97,7 +96,7 @@
                 height: auto;
                 background-color: rgb(255 255 255 / 90%);
                 padding: 0px 3px;
-                font-size: 1.3vw;
+                font-size: 10pt;
                 font-weight: bold;
                 border-radius: 2px;
                 font-family: roboto;
@@ -111,7 +110,7 @@
                 bottom: -10px;
                 left: 2px;
             }
-            #radioGroup input {
+            #radioGroup p {
                 margin: 0;
             }
             .author {
@@ -124,26 +123,29 @@
                 color: #919191;
             }
             @media only screen and (max-width: 768px) {
+                .head-title { }
                 .header {height: fit-content; }
+                .footer { }
 		    }	
             @media only screen and (max-width: 1040px) {
-                .left-side2 {font-size: 1.1vw;}
+                .left-side {font-size: 1.1vw;}
                 .header {padding-bottom: 1vw;}
-                .header2 span {font-size: 1.3vw;}
-                .head-title2 {font-size: 2vw !important;}
-                .footer2 {font-size: 1.3vw;}
-                .footer2 b {font-size: 1.45vw;}
+                .header span {font-size: 1.3vw;}
+                .head-title {font-size: 2vw !important;}
+                .footer {font-size: 1.3vw;}
+                .footer b {font-size: 1.45vw;}
                 .header span {padding: 0.9vw;}
                 .footer span {padding: 0.9vw;}
-                .author2{font-size: 1.1vw;}
+                .author {font-size: 1.1vw;}
                 #tooltip {
-                    font-size: 1.3vw;
+                    font-size: 1.2vw;
                 }
                 #radioGroup {
                     font-size: 1.2vw;
                     left: 0.5vw;
                     bottom: -1vw;
                     padding: 0.2vw;
+                    width: 18vw;
                 }
                 #radioGroup input {
                     width: 7%;
