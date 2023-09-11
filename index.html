@@ -22,6 +22,7 @@
       #main > nav{
         flex: 0 0 20vw;
         background: #f3f3e6;
+        font-size: 1.4vw;
       }
       #main > nav {
         order: -1;
@@ -29,12 +30,20 @@
       header, footer, article, nav {
         padding: 1em;
       }
+      article .mail a {
+        font-weight: bold;
+        font-size: 1.1vw;
+        color: #919191;
+      }
       header, footer {
         background: #7a9163;
         color: #f3f3e6;
-        font-size:20px;
+        font-size: 1.8vw;
         text-align: center;
         height: 20vh;
+      }
+      footer a {
+        color: #272727;
       }
 
     </style>
@@ -45,17 +54,16 @@
     </header>
     <div id="main">
       <article>
-        <p><iframe src="map.html" title="Interactive DST map" width="100%" style="border:none; aspect-ratio: 4/2;"></iframe></p>
-        <p style="text-align: center;font-size:18px;color:#6b1b10;">
+        <p><iframe src="map.html" title="Interactive DST map" width="100%" scrolling="no" style="border:none; aspect-ratio: 4/1.8;"></iframe></p>
+        <p style="text-align: center;font-size:1.6vw;color:#6b1b10;">
           <b>Click here for full sized map:</b>
           <a href="https://interactivedstmap.github.io/"><b>"https://interactivedstmap.github.io/"</b></a>
         </p>
-        <p style="text-align: center;font-size:10px;color:#6b1b10;">
-        You can use code like this to embed the map within a web page:
-
-        ....................
+        <p style="text-align: center;font-size:1vw;color:#6b1b10;">
+            You can use code like this to embed the map within a web page:
+         &lt;iframe src="map.html" title="Interactive DST map" width="100%" height="100%" &gt;&lt;/iframe&gt;
         </p>
-        <p style="text-align: right;font-size:7px;color:gray;">
+        <p class="mail" style="text-align: right;">
           <a href="mailto:ike@dstmap.com">I. Jeanes</a>
         </p>
       </article>
@@ -74,8 +82,3 @@
   </footer>
  </body>
 </html>
- 
- 
- 
- 
- 
