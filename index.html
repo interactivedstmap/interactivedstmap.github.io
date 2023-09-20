@@ -209,7 +209,7 @@
             </div>
             <div class="footer">
                 <span>Arizona and Hawaii have rejected DST. Sec. 260a allows any state to go on permanent Standard Time within its borders without congressional action. 
-                    To change a DST requires congressional action. DSTs are designated at county levels named in the Table. </span>
+                    To change a DST requires congressional action. Time Zones are designated at county levels named in the Table. </span>
                 <span>The adverse health and economic impact of large positive solar delays is often referred to as the <a href="https://www.google.com/search?hl=en&as_q=dst+western+edge+effect">"Western Edge Effect."</a> 
                     Small or negative delays are generally considered beneficial. The map is equally divided into five colors. 
                     Economic activity, as measured by personal income and population, is largest at the two lightest map colors. 
@@ -217,8 +217,12 @@
                 <span>For DST rejectionists, experiments to maintain sync with solar time by setting clocks and watches within a household to local solar time and using DST time elsewhere are occasionally possible. </span>
                 <span>Options Summary: <b >#1</b> No DST; <b >#2</b> Memorial to Labor Day DST, May 20 - Sep 9, 113 Days, 31% of year; <b >#3</b> 1966 to 2006 DST, Apr 24 - Oct 30, 190 Days, 52% of year;
                     <b >#4</b> Current DST, Mar 10 - Nov 3, 239 Days, 65% of year; <b >#5</b> Proposed Permanent DST, 100% of year. </span>
-                    <span class="author"><a href="https://creativecommons.org/licenses/">Creative commons license CC BY-ND.</a> <a href="mailto:ike@dstmap.com">Courtesy of I. Jeanes.</a></span>
-            </div>             
+                <span style="font-size: smaller;">Note: In each time zone there is an instant (local solar noon) when the sun is directly overhead and morning and afternoon hours are effectively equally long (the midday). 
+                    When clock time is also at 12 o'clock noon, position of sun and clocks are in sync, and solar delay, as referred to here is zero. When it takes longer for the sun to arrive at this midpoint, the delay is a positive. 
+                    When negative, the sun arrives before your watch time indicates. At all hours of the day, the delay is present.</span> 
+                <span class="author"><a href="https://creativecommons.org/licenses/">Creative commons license CC BY-ND.</a> <a href="mailto:ike@dstmap.com">Courtesy of I. Jeanes.</a></span>
+            
+                </div>             
 		</div>	
 
 		<script>	
@@ -253,6 +257,8 @@
             });
 
             function ready(error, data, geo) {
+
+                let startRadio = 'on';
 
                 // add layers to map
                 const counties = topojson.feature(geo, geo.objects.counties);
@@ -312,7 +318,7 @@
                         
                         // change table data dynamically after each mouseover
                         let selectedVal = $('input[name="radiogroup"]:checked').val(); 
-                        if (selectedVal === 'mouse') {
+                        if (selectedVal === 'mouse' || startRadio === 'on') {
                             $('#county-name').html(d.properties.Header);
                             $('#data-population').html(d.properties.population);
                             $('#data-delay').html(d.properties.Delay);
@@ -328,7 +334,7 @@
                             $('#permanent-pr-sun-7').html(d.properties["#5_%aft7:00"]);
                             $('#permanent-min-sun-7').html(d.properties["#5 hour"]);
                         } else {
-                            console.log('Mouseover disable')
+                            console.log('Mouseover disable');
                         }                        
                     })
                     .on("mouseout", (event, d) => {
@@ -407,6 +413,10 @@
                 function zoomed({transform}) {
                     g.attr("transform", transform);
                 };
+
+                $('input[type=radio][name=radiogroup]').change(function() {
+                    startRadio = 'off';
+                });
             };
 
 		</script>
