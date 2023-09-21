@@ -258,8 +258,6 @@
 
             function ready(error, data, geo) {
 
-                let startRadio = 'on';
-
                 // add layers to map
                 const counties = topojson.feature(geo, geo.objects.counties);
                 const states = topojson.feature(geo, geo.objects.states);
@@ -318,7 +316,7 @@
                         
                         // change table data dynamically after each mouseover
                         let selectedVal = $('input[name="radiogroup"]:checked').val(); 
-                        if (selectedVal === 'mouse' || startRadio === 'on') {
+                        if (selectedVal === 'mouse') {
                             $('#county-name').html(d.properties.Header);
                             $('#data-population').html(d.properties.population);
                             $('#data-delay').html(d.properties.Delay);
@@ -383,9 +381,9 @@
                     .attr("id", "radioGroup")
                     .style("position", 'absolute');
 
-                radio.html('<input type="radio" id="enable" name="radiogroup" value="click" checked />\
+                radio.html('<input type="radio" id="enable" name="radiogroup" value="click"  />\
                     <label for="enable">Table changes when clicking</label></br>\
-                    <input type="radio" id="disable" name="radiogroup" value="mouse" />\
+                    <input type="radio" id="disable" name="radiogroup" value="mouse" checked />\
                     <label for="disable">Continuously changing Table</label>');       
 
                 // add map title
