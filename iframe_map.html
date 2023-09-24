@@ -152,8 +152,8 @@
                     margin: 0px 0px 0px 2px;
                 }
                 #radioGroup label {
-                    float: right;
-                    padding-top: 0.25vw;
+                        float: none;
+   			 vertical-align: 0.2vw;
                 }
 		    }           	       
 		</style>	
@@ -362,9 +362,9 @@
                     .attr("id", "radioGroup")
                     .style("position", 'absolute');
 
-                radio.html('<input type="radio" id="enable" name="radiogroup" value="click" checked />\
+                radio.html('<input type="radio" id="enable" name="radiogroup" value="click"  />\
                     <label for="enable">Table changes when clicking</label></br>\
-                    <input type="radio" id="disable" name="radiogroup" value="mouse" />\
+                    <input type="radio" id="disable" name="radiogroup" value="mouse" checked />\
                     <label for="disable">Continuously changing Table</label>');       
 
                 // add map title
