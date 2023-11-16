@@ -4,13 +4,13 @@
 		<title>Five DST Options: Impact on Health and School Children Safety</title>
         <meta name="description" content="The two interactive maps on this page quickly give you a complete picture of DST and Time Zone options for your home county. All 3,000 US counties are covered.">
         <meta name="keywords" content="Interactive DST Map, Daylight Savings Time, Western Edge Effect, Changing the Clocks, time zone, school bus morning darkness, FIVE DST, DST and health">
-		<meta charset="utf-8" />
-		<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
+		<meta charset="utf-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://unpkg.com/topojson@3"></script>
 		<style>
             @import url('https://fonts.cdnfonts.com/css/tr-tempus-sans-itc');
-		@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+		    @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
             body,html {
                 height: 100%;
                 width: 100%;
@@ -100,8 +100,6 @@
                 fill: #d6206c;
                 stroke: #d6206c;
 			}
-			
-			
 			#tooltip {
                 position: absolute;
                 width: max-content;
@@ -135,7 +133,12 @@
             .author a {
                 color: #919191;
             }
-			
+			.ikejeanes {
+                border:none;
+                width: 100%;
+                aspect-ratio: 4/1.4;
+                overflow: hidden;
+            }
             @media only screen and (max-width: 768px) {
                 .head-title { }
                 .header {height: fit-content; }
@@ -172,7 +175,29 @@
                     padding-top: 0.25vw;
                 }
 					
-		    }           	       
+		    }    
+            @media print {
+                .main {
+                    width: 90%;
+                    left: 5%;
+                }
+                .left-side {
+                    width: 36%;
+                    font-size: 9pt;
+                }
+                #svgContainer {
+                    position: relative;
+                    aspect-ratio: 3.1/2;
+                    width: 64%;
+                    display: flex;
+                }
+                .ikejeanes {
+                    aspect-ratio: 4/2.1;
+                }
+            }
+            @page {
+                margin: 2px;
+            }       	       
 		</style>	
 	</head>
 	<body>
@@ -193,27 +218,27 @@
                         <div class="data-row"><span>With DST, Delay in minutes:</span><span class="dynamic" id="data-delay-dst">83</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#1 No DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#1 No DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="nodst-pr-sun-7">28%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="nodst-min-sun-7">7:35</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#2 Memorial Day DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div>
+                        <div class="data-row"><h3>#2 Memorial Day DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div>
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="memorial-pr-sun-7">28%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="memorial-min-sun-7">7:35</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#3 1966-2006 DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#3 1966-2006 DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="1966-pr-sun-7">42%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="1966-min-sun-7">7:45</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#4 2007 Current DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#4 2007 Current DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="current-pr-sun-7">51%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="current-min-sun-7">7:50</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#5 Permanent DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#5 Permanent DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="permanent-pr-sun-7">58%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="permanent-min-sun-7">8:35</span></div>
                     </div>                   
@@ -279,73 +304,73 @@
 				<span> While we sleep, it makes good use of some of the abundant May 20th very early morning hours. With an eye toward practicality, it begins a week before and ends the week after heavy holiday transportation demands. Perhaps paramount for many, it happily blends with the tradition of Memorial Day being the unofficial start of summer and Labor Day being the unofficial end of summer <code>&#8212;</code> a bona fide summertime DST.</span>
 				
 				<table style="width:100%">
-  <tr>
-    <th># Day</th>
-    <th>Date</th>
-    <th>Event</th>
-    <th>Sunrise</th>
-    <th>Morning Hours</th>
-    <th>DST % of Hours</th>
-    <th>Proximity</th>
-  </tr>
-    <tr>
-    <td>1</td>
-    <td>Jan 1</td>
-    <td>New Year</td>
-    <td>7:46 AM</td>
-    <td>4:46</td>
-    <td>21%</td>
-    <td>-0:46</td>
-  </tr>
+                    <tr>
+                        <th># Day</th>
+                        <th>Date</th>
+                        <th>Event</th>
+                        <th>Sunrise</th>
+                        <th>Morning Hours</th>
+                        <th>DST % of Hours</th>
+                        <th>Proximity</th>
+                    </tr>
+                        <tr>
+                        <td>1</td>
+                        <td>Jan 1</td>
+                        <td>New Year</td>
+                        <td>7:46 AM</td>
+                        <td>4:46</td>
+                        <td>21%</td>
+                        <td>-0:46</td>
+                    </tr>
 
-  <tr>
-    <td>69</td>
-    <td>Mar 10</td>
-    <td>Current DST Start</td>
-    <td>6:48 AM</td>
-    <td>5:51</td>
-    <td>17%</td>
-    <td>0:11</td>
-  </tr>
-  <tr>
-    <td>140</td>
-    <td>May 20</td>
-    <td>Memorial Day</td>
-    <td>5:14 AM</td>
-    <td>7:11</td>
-    <td>14%</td>
-    <td>1:45</td>
-  </tr>
-  
-    <tr>
-    <td>172</td>
-    <td>Jun 21</td>
-    <td>Longest Morning</td>
-    <td>5:06 AM</td>
-    <td>7:25</td>
-    <td>13%</td>
-    <td>1:53</td>
-  </tr>
-  
-  <tr>
-    <td>252</td>
-    <td>Sep 9</td>
-    <td>Labor Day</td>
-    <td>6:06 AM</td>
-    <td>6:20</td>
-    <td>16%</td>
-    <td>0:53</td>
-  </tr>
-  <tr>
-    <td>308</td>
-    <td>Nov 4</td>
-    <td>Current DST End</td>
-    <td>6:58 AM</td>
-    <td>5:15</td>
-    <td>19%</td>
-    <td>0:02</td>
-  </tr>
-</table>
+                    <tr>
+                        <td>69</td>
+                        <td>Mar 10</td>
+                        <td>Current DST Start</td>
+                        <td>6:48 AM</td>
+                        <td>5:51</td>
+                        <td>17%</td>
+                        <td>0:11</td>
+                    </tr>
+                    <tr>
+                        <td>140</td>
+                        <td>May 20</td>
+                        <td>Memorial Day</td>
+                        <td>5:14 AM</td>
+                        <td>7:11</td>
+                        <td>14%</td>
+                        <td>1:45</td>
+                    </tr>
+                    
+                        <tr>
+                        <td>172</td>
+                        <td>Jun 21</td>
+                        <td>Longest Morning</td>
+                        <td>5:06 AM</td>
+                        <td>7:25</td>
+                        <td>13%</td>
+                        <td>1:53</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>252</td>
+                        <td>Sep 9</td>
+                        <td>Labor Day</td>
+                        <td>6:06 AM</td>
+                        <td>6:20</td>
+                        <td>16%</td>
+                        <td>0:53</td>
+                    </tr>
+                    <tr>
+                        <td>308</td>
+                        <td>Nov 4</td>
+                        <td>Current DST End</td>
+                        <td>6:58 AM</td>
+                        <td>5:15</td>
+                        <td>19%</td>
+                        <td>0:02</td>
+                    </tr>
+                </table>
 
 				<span style="font-size: 6pt;">Above based on NOAA sunrise spreadsheet, cited below, where a median latitude is employed at a conventional western edge border (latitude 38.3, longitude -82.5, time zone -5, solar delay 30 minutes, local solar times prior to DST adjustments).</span>
 
@@ -355,12 +380,11 @@
 
 				<span>Because of the 1966 law and long DSTs, we never experienced in our lifetimes the natural unfolding of spring. With the prior gradual increase of sunlight, we safely and pleasurably could adapt over a period of about 50 to 59 days to 60-minute natural increases in morning sunlight. Long DSTs instead gave us spring seasons with an <b>adjust</b> (adapt to a 60-minute increase of morning sunlight over about 55 days), <b>reverse</b> (in one day take away those 60 minutes), <b>adjust again</b> (try to recover) cycle. It is no wonder that changing clocks became odious.</span>
 
-		
-		<hr>
+		        <hr>
 
 				<h3>Fix your local time zone & no need to change clocks the following spring.</h3>
 
-				<iframe src="https://ikejeanes.github.io/" title="Interactive DST/time-zone map" width="100%" scrolling="no" style="border:none; aspect-ratio: 4/1.4;"></iframe>
+				<iframe src="https://ikejeanes.github.io/" class="ikejeanes" title="Interactive DST/time-zone map"></iframe>
 
 				<span>Now let's look at the time zone fix. The first column in the above Table is the same as in the first map. However, when a time zone is changed, results from the fix are shown separately in black in a second column. The second column is empty when no change occurs. This map shows pure one-hour time zones. Solar delays fall within a +30 to -30 minute range. Eastern time begins at longitude -67.5°; Central, at -82.5°; Mountain at -97.5°; and Pacific at -112.5°. These time-zone boundary lines are shown on the map. Fixing time zones in this orderly fashion produces the highly favorable outcomes shown in the map's Table.</span> 
 
