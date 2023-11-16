@@ -1,8 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 	<head>
 		<title>US DST Map</title>
-		<meta charset="utf-8" />
-		<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
+		<meta charset="utf-8" >
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://unpkg.com/topojson@3"></script>
 		<style>
@@ -104,7 +105,7 @@
             }	
             #radioGroup {
                 position: absolute;
-                font-size: 10pt;
+                font-size: 1.2vw;
                 background-color: #ffffffcc;
                 border-radius: 2px;
                 bottom: -10px;
@@ -175,27 +176,27 @@
                         <div class="data-row"><span>With DST, Delay in minutes:</span><span class="dynamic" id="data-delay-dst">83</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#1 No DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#1 No DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="nodst-pr-sun-7">28%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="nodst-min-sun-7">7:35</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#2 Memorial Day DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div>
+                        <div class="data-row"><h3>#2 Memorial Day DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div>
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="memorial-pr-sun-7">28%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="memorial-min-sun-7">7:35</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#3 1966-2006 DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#3 1966-2006 DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="1966-pr-sun-7">42%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="1966-min-sun-7">7:45</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#4 2007 Current DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#4 2007 Current DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="current-pr-sun-7">51%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="current-min-sun-7">7:50</span></div>
                     </div>
                     <div>
-                        <div class="data-row"><h3>#5 Permanent DST</h3><span class="dynamic" id="data-population">&nbsp;&nbsp;&nbsp;</span></div> 
+                        <div class="data-row"><h3>#5 Permanent DST</h3><span class="dynamic">&nbsp;&nbsp;&nbsp;</span></div> 
                         <div class="data-row"><span>% Sunrises after 7:00 AM:</span><span class="dynamic" id="permanent-pr-sun-7">58%</span></div>
                         <div class="data-row"><span>Latest Sunrise:</span><span class="dynamic" id="permanent-min-sun-7">8:35</span></div>
                     </div>                   
